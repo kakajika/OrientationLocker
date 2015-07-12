@@ -1,6 +1,8 @@
 # OrientationLocker
 A rotating orientation locker view for Android.
 
+Support smartphone and tablet.
+
 ## How it looks
 
 ![gif](./image/orientation_locking.gif "orientation_locking")
@@ -65,6 +67,12 @@ protected void onPause() {
     // Stop handling screen rotation.
     mLockerView.setLockerEnabled(false);
 }
+```
+
+You can custom delay until LockerView will be hidden.
+
+```java
+mLockerView.setHideDelay(2000, 3000)
 ```
 
 ## License
