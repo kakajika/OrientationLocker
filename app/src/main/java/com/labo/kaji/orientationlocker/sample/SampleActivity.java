@@ -22,9 +22,9 @@ public class SampleActivity extends AppCompatActivity {
             @Override
             public void onLockerRequestLock(OrientationLockerView view, boolean lock) {
                 if (lock) {
-                    view.getOrientationLocker().lockCurrentOrientation(SampleActivity.this);
+                    view.lockCurrentOrientation(SampleActivity.this);
                 } else {
-                    view.getOrientationLocker().unlockOrientation(SampleActivity.this);
+                    view.unlockOrientation(SampleActivity.this);
                 }
             }
         });

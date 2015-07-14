@@ -3,6 +3,7 @@ package com.labo.kaji.orientationlocker;
 import android.animation.Animator;
 import android.animation.ObjectAnimator;
 import android.annotation.TargetApi;
+import android.app.Activity;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
@@ -129,6 +130,22 @@ public class OrientationLockerView extends RelativeLayout {
     }
 
     /**
+     * Lock orientation to current value.
+     * @param activity
+     */
+    public void lockCurrentOrientation(Activity activity) {
+        mOrientationLocker.lockCurrentOrientation(activity);
+    }
+
+    /**
+     * Unlock orientation change.
+     * @param activity
+     */
+    public void unlockOrientation(Activity activity) {
+        mOrientationLocker.unlockOrientation(activity);
+    }
+
+    /**
      * Handle orientation event.
      * @param orientation
      */
@@ -187,11 +204,11 @@ public class OrientationLockerView extends RelativeLayout {
         postDelayed(mHideScreenLockRunnable, getHideDelay());
     }
 
-    private long getHideDelay() {
+    protected long getHideDelay() {
         return isSelected() ? mHideDelayOnLocked : mHideDelayOnUnlocked;
     }
 
-    private Runnable mHideScreenLockRunnable = new Runnable() {
+    protected Runnable mHideScreenLockRunnable = new Runnable() {
         @Override
         public void run() {
             final float currentAlpha = getAlpha();
