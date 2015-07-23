@@ -1,1 +1,3 @@
-include ':app', ':lib'
+include ':app', ':orientationlocker'
+
+project(':orientationlocker').projectDir = new File(settingsDir, 'lib')

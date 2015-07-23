@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 22
@@ -20,6 +21,15 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:22.2.0'
+    compile 'com.android.support:support-annotations:22.2.0'
     compile 'co.trikita:log:1.1.0'
+}
+
+publish {
+    userOrg = 'kakajika'
+    groupId = 'com.labo.kaji'
+    artifactId = 'orientationlocker'
+    publishVersion = '0.1.0'
+    desc = 'A rotating orientation locker view for Android.'
+    website = 'https://github.com/kakajika/OrientationLocker'
 }
