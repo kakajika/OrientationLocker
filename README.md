@@ -7,6 +7,19 @@ Support smartphone and tablet.
 
 ![gif](./image/orientation_locking.gif "orientation_locking")
 
+## Install
+
+In your build.gradle:
+
+```gradle
+repositories {
+    jcenter()
+}
+dependencies {
+    compile 'com.labo.kaji:orientationlocker:0.1.0'
+}
+```
+
 ## Usage
 
 Create your layout of OrientationLockerView.
@@ -43,9 +56,9 @@ mLockerView.setOrientationLockerViewListener(new OrientationLockerView.Orientati
     @Override
     public void onLockerRequestLock(OrientationLockerView view, boolean lock) {
         if (lock) {
-            view.getOrientationLocker().lockCurrentOrientation(SampleActivity.this);
+            view.lockCurrentOrientation(SampleActivity.this);
         } else {
-            view.getOrientationLocker().unlockOrientation(SampleActivity.this);
+            view.unlockOrientation(SampleActivity.this);
         }
     }
 });
